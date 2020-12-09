@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DBS ChatBot</title>
+    <meta name="description" content="DBS ChatBot">
+    <meta name="keywords" content="DBS ChatBot DBSChatBot">
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link rel="stylesheet" type="text/css" href="https://dobizsystems.com/chatbot/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://dobizsystems.com/chatbot/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://dobizsystems.com/chatbot/css/imagehover.min.css">
+    <link rel="stylesheet" type="text/css" href="https://dobizsystems.com/chatbot/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://dobizsystems.com/chatbot/css/pignose.calendar.css">
+    <link rel="stylesheet" type="text/css" href="https://dobizsystems.com/chatbot/css/pignose.calendar.min.css">
+    
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link data-require="bootstrap-css@3.*" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+    <script data-require="angular.js@1.6.5" data-semver="1.6.5" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script data-require="angular-animate@1.6.*" data-semver="1.6.5" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
+    <script data-require="angular-touch@1.6.*" data-semver="1.6.2" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-touch.js"></script>
+    <script data-require="ui-bootstrap@*" data-semver="2.5.0" src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-2.5.0.js"></script>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dobizsystems.com/chatbot/pignose.calendar.css">
+    <link rel="stylesheet" href="https://dobizsystems.com/chatbot/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://dobizsystems.com/chatbot/js/moment.js"></script>
+    <script src="https://dobizsystems.com/chatbot/js/pignose.calendar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.26/moment-timezone.min.js"></script>
+
+      <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+      <script src="//code.angularjs.org/snapshot/angular-sanitize.js"></script>
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script> -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://dobizsystems.com/chatbot/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://dobizsystems.com/chatbot/moment.js"></script>
+    <script src="https://dobizsystems.com/chatbot/pignose.calendar.js"></script>
+
+
+
+</head>
+<body>
+    <!--Rating Modal Start-->
+  <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Rate Our Buzz</h4>
+        </div>
+        <div class="modal-body" style="height:60px;">
+          <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="Excellent"></label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="Very Good"></label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="Good"></label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="Average"></label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="Below Average"></label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Later</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ThankYouModal" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--Rating Modal End-->
+  
+  
+  <!--Rating Modal Start-->
+  <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="ThankYouModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Rate Our Buzz</h4>
+        </div>
+        <div class="modal-body">
+          <p><span>&#10003;</span> Thank You for using BUZZ Services!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--Rating Modal End-->
+    <div ng-app="myApp" id="chatbot">
+    <div ng-controller="myController">
+        <div class="chatBox-show boxHeader" ng-show="displayChatBox">
+            <div class="header">
+                
+                <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars menu" aria-hidden="true"></i></button>
+                    <div class="dropdown-content">
+                            <li ng-click="getService()">Services</li>
+                            <li ng-click="redirectToBookingUrl()">Schedule A Call</li>
+                            <li ng-click="getVideo()">DBS Video</li>
+                            <li ng-click="getContact()" href="https://dobizsystems.com/contact/" >Contact Us</li>
+                    </div>
+                </div>
+                
+                <span class="heading">DBS BUZZ</span> 
+                <i class="fa fa-window-minimize" ng-click="closeChatBox()"></i>
+            </div>
+            
+            <div>
+            <div id="messageBody">
+                <div class="box">
+                    <i class="fab fa-reddit-alien bot-icon ng-scope"></i>
+                    <div class="container">
+                        <div id="divMessages">Hi  <img src="https://dobizsystems.com/chatbot/img/hi.png" width="18px"/> Welcome to DBS BUZZ, select the topic or type your question.</div>
+                    </div>
+                </div>
+                </div>
+                <div id="loadingDiv">
+                  <img src="https://dobizsystems.com/chatbot/img/rb.gif" class="ajax-loader"/>
+              </div>
+            </div>
+            
+            <div class="clearChat" data-toggle="modal" data-target="#myModal"  ng-click="clearChat()">
+                <span class="clearText">Clear Chat</span>
+            </div>
+            
+            
+  
+
+            <div class="type_msg">
+                    <div class="input_msg_write">
+                      <input type="text" class="write_msg" placeholder="Type your message..." ng-model="message.content" my-enter="sendMessage()">
+                      <span class="msg_send_btn" aria-hidden="true" ng-click="sendMessage()"><img src="https://dobizsystems.com/chatbot/img/send-button-hover.png" width="24px"></span>
+                    </div>
+            </div>
+        </div>
+
+        <div>
+            <span class='open-button' ng-show="chatImage">
+                <div class="bot-msg">
+                    Hi, I am here to help you!
+                </div>
+                <img src="https://dobizsystems.com/chatbot/img/Messages-icon.png" width="64px" ng-click="openForm()">
+            </span>
+        </div>
+    </div>
+    </div>
+    
+    <!--Footer
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      &copy; 2019 <a href="https://dobizsystems.com">DoBizSystems</a>. All rights reserved
+    </div>
+  </footer>
+  <!--/ Footer-->
+    
+    <script>
+        var myApp = angular.module('myApp', ['ui.bootstrap']);
+
+        myApp.controller("myController", function ($scope, $interval, $http, $location, $anchorScroll, $window, $uibModal) {
+            $('#loadingDiv').hide();
+            $scope.displayChatBox = false;
+            $scope.chatImage = true;
+
+
+            $scope.config = {
+                headers : {
+                    'Authorization': 'Bearer 977c6dcba72a4586abfac774a1932a7e',
+                    'Accept': 'text/plain'
+                }
+            }
+
+            $scope.message;
+            $scope.messages = [{content:"Hi there! Welcome to DBS Buzz, select the topic or write your question.",timestamp:new Date(), bot: 1}];
+            $scope.messageText;
+
+            $scope.sendMessage = function(){
+                $('#loadingDiv').show();
+                var test1 =$.parseHTML("<div class='box'> <div class='container'>"+$scope.message.content+"</div>");
+                $("#messageBody").append(test1);
+                    
+                $scope.message.timestamp = new Date();
+                $scope.messageBody = angular.copy($scope.message);
+                
+                if($scope.messageBody.content != '' && $scope.messageBody.content != null) {
+                $scope.messageBody.bot = 0;
+                $scope.messages.push($scope.messageBody);
+                $scope.scrollBottom();
+                }
+
+                $scope.data = {
+                  query : $scope.message.content,
+                  lang: 'en',
+                  sessionId: '12345'
+                }
+
+                $http.post('https://api.dialogflow.com/v1/query?v=20150910', $scope.data, $scope.config).then(function(response) {
+                    var test =$.parseHTML("<div class='box'> <i class='fab fa-reddit-alien bot-icon ng-scope'></i><div class='container'> <p class='ng-binding'>"+response.data.result.fulfillment.speech+"</div>");
+                    $("#messageBody").append(test);
+                    $scope.messages.push({"content":response.data.result.fulfillment.speech, "timestamp": response.data.timestamp, "bot": 1});
+                    $scope.message = null;
+                    $('#loadingDiv').hide();
+                    $scope.scrollBottom();
+                });
+            };
+            
+            $scope.getService = function(){
+                $('#loadingDiv').show();
+                var service1 =$.parseHTML("<div class='box'><div class='container'> <p class='ng-binding'><p>Services</p> </div>");
+                $("#messageBody").append(service1);
+                $scope.messageBody = angular.copy({content:"Sevices",timestamp:new Date()});
+                
+                if($scope.messageBody.content != '' && $scope.messageBody.content != null) {
+                $scope.messageBody.bot = 0;
+                $scope.messages.push($scope.messageBody);
+                $scope.scrollBottom();
+                }
+
+                $scope.data = {
+                  query : "Services",
+                  lang: 'en',
+                  sessionId: '12345'
+                }
+
+                $http.post('https://api.dialogflow.com/v1/query?v=20150910', $scope.data, $scope.config).then(function(response) {
+                    var service =$.parseHTML("<div class='box'> <i class='fab fa-reddit-alien bot-icon ng-scope'></i><div class='container'> <p class='ng-binding'>"+response.data.result.fulfillment.speech+"</p></div>");
+                  $("#messageBody").append(service);
+                    $scope.messages.push({"content":response.data.result.fulfillment.speech, "timestamp": response.data.timestamp, "bot": 1});
+                     $scope.message = null;
+                     $('#loadingDiv').hide();
+                    $scope.scrollBottom();
+                });
+            };
+            $scope.getVideo = function(){
+                $('#loadingDiv').show();
+                var video ="<div class='box'><div class='container'> <p class='ng-binding'>DBS Video</div>";
+                $("#messageBody").append(video);
+                $scope.messageBody = angular.copy({content:"Video",timestamp:new Date()});
+                
+                if($scope.messageBody.content != '' && $scope.messageBody.content != null) {
+                $scope.messageBody.bot = 0;
+                $scope.messages.push($scope.messageBody);
+                $scope.scrollBottom();
+                }
+
+                $scope.data = {
+                  query : "video",
+                  lang: 'en',
+                  sessionId: '12345'
+                }
+
+                $http.post('https://api.dialogflow.com/v1/query?v=20150910', $scope.data, $scope.config).then(function(response) {
+                    var video1 ="<div class='box'> <i class='fab fa-reddit-alien bot-icon ng-scope'></i><div class='container'> <p class='ng-binding'>"+response.data.result.fulfillment.speech+"</div>";
+                    $("#messageBody").append(video1);
+                    $scope.messages.push({"content":response.data.result.fulfillment.speech, "timestamp": response.data.timestamp, "bot": 1});
+                     $scope.message = null;
+                    $('#loadingDiv').hide();
+                    $scope.scrollBottom();
+                });
+            };
+            $scope.getContact = function(){
+                $('#loadingDiv').show();
+                var contact ="<div class='box'><div class='container'> <p class='ng-binding'>Contact Us</div>";
+                $("#messageBody").append(contact);
+                $scope.messageBody = angular.copy({content:"Contact Us",timestamp:new Date()});
+                
+                if($scope.messageBody.content != '' && $scope.messageBody.content != null) {
+                $scope.messageBody.bot = 0;
+                $scope.messages.push($scope.messageBody);
+                $scope.scrollBottom();
+                }
+
+                $scope.data = {
+                  query : "Contact Us",
+                  lang: 'en',
+                  sessionId: '12345'
+                }
+
+                $http.post('https://api.dialogflow.com/v1/query?v=20150910', $scope.data, $scope.config).then(function(response) {
+                    var contact1 ="<div class='box'> <i class='fab fa-reddit-alien bot-icon ng-scope'></i><div class='container'> <p class='ng-binding'>"+response.data.result.fulfillment.speech+"</div>";
+                    $("#messageBody").append(contact1);
+                    $scope.messages.push({"content":response.data.result.fulfillment.speech, "timestamp": response.data.timestamp, "bot": 1});
+                    $scope.message = null;
+                    $('#loadingDiv').hide();
+                    $scope.scrollBottom();
+                });
+            };
+
+            $scope.openForm = function(){
+                $scope.displayChatBox = true;
+                $scope.chatImage = false;
+            };
+
+            $scope.closeChatBox = function(){
+                $scope.displayChatBox = false;
+                $scope.chatImage = true;
+            }
+
+            $scope.clearChat = function(){
+                $("#messageBody").html("");
+                $("#messageBody").append($.parseHTML("<div class='box'> <i class='fab fa-reddit-alien bot-icon ng-scope'></i> <div class='container'> <div id='divMessages'>Hi there! Welcome to DBS BUZZ , select the topic or write your question.</div> </div> </div>"));
+                $scope.messages = [{content:"Hi there!Welcome to DBS BUZZ ,  select the topic or write your question.",timestamp:new Date(), bot: 1}];
+            }
+
+            $scope.scrollBottom = function(){
+                var box = document.getElementById('messageBody');
+                box.scrollTop = box.scrollHeight;
+            }
+
+            $scope.redirectToBookingUrl = function () {
+                console.log("hello redirectToBookingUrl");
+                var modalInstance =  $uibModal.open({
+                  templateUrl: "schedule.html",
+                  controller: "scheduleController",
+                  size: '100',
+                });
+            }
+            $(document).on('click','body .services',function(){  
+                console.log("hello test");
+                var service = $(this).text();
+                    $scope.message = {};
+                    $scope.message.content = service;
+                    $scope.message.timestamp = new Date();
+                    $scope.sendMessage();
+            });
+        });
+
+        myApp.controller("scheduleController", function ($scope, $interval, $http, $location, $anchorScroll, $window, $uibModalStack) {
+            $scope.dateSelected = false;
+            $scope.selectedTime;
+
+            $('.calendar').pignoseCalendar({
+                format: 'MM/DD YYYY',
+                select : function(event, context){
+                    $scope.selectedDate = event;
+                    console.log("*********************");
+                    console.log(event[0], event[1]);
+                    console.log("***********************");
+                    $scope.clickedFuncntion();
+                },
+                theme: 'dark',
+                minDate: moment().subtract(0, 'days'),
+            });
+
+            $scope.closeModal = function() {
+                console.log("hello this is for close modal");
+                $uibModalStack.dismissAll();
+            }
+
+            $scope.scheduleEvent = function() {
+                console.log("userName:"+$scope.name);
+                console.log("emailId:"+$scope.emailId);
+                console.log("Emailbody:"+$scope.message);
+                $scope.config1 = {
+                     headers : {
+                        'Content-Type': 'application/json'
+                    }
+                }
+                console.log("config:");
+                console.log($scope.config1);
+                var endTime1 = moment($scope.selectedTime, "hh:mm").add(30, 'minutes').format("hh:mm");
+                console.log(endTime1);
+                console.log($scope.displayDate+" "+$scope.selectedTime);
+                console.log(moment($scope.displayDate+" "+$scope.selectedTime).format('DD-MM-YYYYTHH:mm:00:06:30'));
+                $scope.data1 = {
+                    toAddress : $scope.emailId,
+                    subject: 'Schedule a Call with DoBizSystems',
+                    startTime: moment($scope.displayDate+" "+$scope.selectedTime).format('YYYY-MM-DDTHH:mm:00+02:00'),
+                    endTime: moment($scope.displayDate+" "+endTime1).format('YYYY-MM-DDTHH:mm:00+02:00'),
+                    emailBody: 'Hi '+$scope.name+'<br/><br> This is a confirmation that you have scheduled a call.<br> on the date of '+$scope.displayDate+' at '+$scope.selectedTime+'<br><br> This topic has been given when schedule a call <br>'+$scope.message+'<br> Thank you for choosing our company.'
+                }
+                
+                var startTime=moment($scope.displayDate+" "+$scope.selectedTime).format('YYYY-MM-DDTHH:mm:00+02:00');
+                var endTime= moment($scope.displayDate+" "+endTime1).format('YYYY-MM-DDTHH:mm:00+02:00');
+                var sub='Schedule a Call with DoBizSystems';
+                var msg='Hi '+$scope.name+'<br/><br> This is a confirmation that you have scheduled a call.<br> on the date of '+$scope.displayDate+' at '+$scope.selectedTime+'<br><br> This topic has been given when schedule a call <br>'+$scope.message+'<br> Thank you for choosing our company.';
+                console.log($scope.phone);
+                
+                schedule($scope.name,$scope.emailId,$scope.phone,startTime,endTime,sub,msg);
+               
+                
+                $("#afterTimeTable").css("display", "none");
+                $("#scheduleEvent").css("display", "none");
+                $("#thankYouMessage").css("display", 'block');
+
+                // $http.post('https://ec2-13-58-207-186.us-east-2.compute.amazonaws.com:8443/calender/createEvent', $scope.data1, $scope.config1).then(function(response) {
+                //     console.log("Success response");
+                // });
+
+            }
+
+            $scope.clickedFuncntion = function(){
+                console.log("selectedDate");
+                console.log($scope.selectedDate[0]);
+                if($scope.selectedDate[0]){
+                    var date1 = moment($scope.selectedDate[0]._d, 'DD/MM/YYYY HH:mm');
+                    $scope.weekDay = date1.format('dddd');
+                    $scope.displayDate = date1.format('LL');
+                    console.log("date:"+date1);
+                    $("#afterCalender").css('display', "block");
+                    $("#day").text($scope.weekDay);
+                    $("#displayDate").text($scope.displayDate);
+                    $('.calendar').css('display', 'none');
+                    $("#backButton").css("display", 'block');
+                    $("#timingsTable").css("display", "block");    
+                }
+            };
+
+            $scope.showCalender = function(){
+                $('.calendar').css('display', 'block');
+                $("#backButton").css('display', 'none');
+                $("#timingsTable").css("display", "none");
+                $("#afterCalender").css("display", "none");
+            };
+
+            $scope.timeButton =  function(){
+                console.log("hello this is for selection");
+                var table = document.getElementsByTagName("table")[0];
+                var tbody = table.getElementsByTagName("tbody")[0];
+                var data = [];
+                tbody.onclick = function (e) {
+                    e = e || window.event;
+                    var target = e.srcElement || e.target;
+                    while (target && target.nodeName !== "TR") {
+                        target = target.parentNode;
+                    }
+                    if (target) {
+                        var cells = target.getElementsByTagName("td");
+                        for (var i = 0; i < cells.length; i++) {
+                            data.push(cells[i].innerHTML);
+                        }
+                    }   
+                    $scope.selectedTime = data;
+                    $("#scheduleEvent").css("display", "block");
+                    $("#selectedTime").text($scope.selectedTime);
+                    $("#timingsTable").css("display", "none");
+                    $("#afterCalender").css("display", "none");
+                    $("#afterTimeTable").css("display", "block");
+                    $("#day1").text($scope.weekDay);
+                    $("#displayDate1").text($scope.displayDate);
+                    $("#backButton1").css("display", 'block');
+                };
+            };
+
+            $scope.showTimeTable = function(){
+                $("#afterCalender").css("display", "block");
+                $("#afterTimeTable").css("display", "none");
+                $("#timingsTable").css("display", "block");
+                $("#scheduleEvent").css("display", "none");
+            };
+
+        });
+
+
+        myApp.directive('myEnter', function () {
+            return function (scope, element, attrs) {
+                element.bind("keydown keypress", function (event) {
+                    if(event.which === 13) {
+                        scope.$apply(function (){
+                            scope.$eval(attrs.myEnter);
+                        });
+
+                        event.preventDefault();
+                    }
+                });
+            };
+        });
+        function schedule(name,email,phone,starttime,endtime,sub,msg){
+                $.ajax({
+                     type : "post",
+                    url : "schedule.php",
+                    data : {'name':name,'email':email,'phone':phone,'starttime':starttime,'endtime':endtime,'sub':sub,'msg':msg},
+                    success : function(data){
+                        console.log(data);
+                     }
+
+              });
+         }
+    </script>
+</body>
+</html>
