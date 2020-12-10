@@ -1,0 +1,115 @@
+<body ng-app="myApp">
+    <div ng-controller="scheduleController" >
+        <div class="modal-header">
+            <h3 style="text-align: center;">Schedule A Call</h3>
+            <i class="fa fa-times closeButton" style="color: black; margin-top: -38px; font-size: 25px;" ng-click="closeModal()"></i>
+        </div>
+        <div class="modal-body">
+            <div class="calendar"></div>
+            <div id="afterCalender">
+                <div id="backButton" class="arrow-left" ng-click="showCalender()" style="display: none;"><i class="fa fa-arrow-circle-left" style="font-size:36px"></i></div>
+                <div id="dateDetails">
+                    <span id="day"></span><br/>
+                    <span id="displayDate"></span>
+                </div>
+            </div>
+
+            <div id="afterTimeTable" style="display: none;">
+                <div id="backButton1" class="arrow-left" ng-click="showTimeTable()"><i class="fa fa-arrow-circle-left" style="font-size:36px"></i></div>
+                <div id="dateDetails1">
+                    <span id="day1"></span><br/>
+                    <span id="displayDate1"></span><br/>
+                    <span id="selectedTime"></span>
+                </div>
+            </div>
+
+            <div class="container" id="timingsTable" style="display: none;">
+                <div class="composition">
+                    <div class="date" style="margin-bottom: 10px;"><span id="date"></span></div>
+                </div>
+                <div style="text-align: center;">
+                    <h4>Select a Time</h4>
+                    <h6>Duration: 30 min</h6>
+                </div>
+
+                <div class="table-responsive tableTimings">          
+                    <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Please Select a Time</th>
+                      </tr>
+                    </thead>
+                    <tbody id="timeTable">
+                      <tr>
+                        <td ng-click="timeButton()">11:00</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">11:30</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">12:00</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">12:30</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">01:00</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">01:30</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">02:00</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">02:30</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">03:00</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">03:30</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">04:00</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">04:30</td>
+                      </tr>
+                      <tr>
+                        <td ng-click="timeButton()">05:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="container" id="scheduleEvent" style="display: none;">
+              <h2>Enter Details</h2>
+              <form method="POST">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter user name" ng-model="name" name="Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="emailId" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="Phone">Phone *</label>
+                     
+    <input type="text" class="form-control" id="phone" placeholder="Enter phone number" ng-model="phone" name="phone" max-length="10" required>
+                </div>
+                <div class="form-group">
+                  <label for="additionalText">Message</label>
+                  <textarea class="form-control" id="message" placeholder="Enter message" ng-model="message" name="message"></textarea>
+                </div>
+                <button type="submit" name="sub" class="btn btn-primary" ng-click="scheduleEvent()">Schedule Event</button>
+              </form>
+            </div>
+
+            <div class="container" id="thankYouMessage" style="display: none;">
+                <h3 style="text-align: center;">Thank you, you will get notification soon..!<img src="img/smile.png" width="40px" style="padding-left: 10px;" /></h3>
+            </div>
+        </div>
+    </div>
+</body>
